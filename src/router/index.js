@@ -6,16 +6,22 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'HelloWorld',
-    //   component: HelloWorld
-    // },
     {
-      path:'/',
+      path: '/',
+      name: 'HelloWorld',
+      component: HelloWorld
+    },
+    {
+      path:'/drag',
       name:'drag',
       component: resolve => require(['../components/page/drag'], resolve),
       meta: {title: '拖拽'}
+    },
+    {
+      path:'/zoom',
+      name:'zoom',
+      component: resolve => require(['../components/page/zoom'], resolve),
+      meta: {title: '图片滚轮缩放'}
     }
   ]
 })
