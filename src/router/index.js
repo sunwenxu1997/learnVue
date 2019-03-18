@@ -18,6 +18,12 @@ export default new Router({
       meta: {title: '拖拽'}
     },
     {
+      path:'/drag+',
+      name:'drag+',
+      component: resolve => require(['../components/page/drag+'], resolve),
+      meta: {title: '拖拽+'}
+    },
+    {
       path:'/zoom',
       name:'zoom',
       component: resolve => require(['../components/page/zoom'], resolve),

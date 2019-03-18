@@ -3,7 +3,7 @@
       <maskOpen ref="maskOpen" :src="imgUrl"></maskOpen>
       <div class="parameter" @click="check">
           <img :src="imgUrl" alt="">
-          <p class="title">参考图</p>
+          <p class="title"><a href="https://github.com/Jexordexan/vue-slicksort" target="_blank">参考地址</a></p>
       </div>
     <!-- 拖拽 -->
     <SlickList
