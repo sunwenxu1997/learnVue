@@ -6,6 +6,7 @@
      <li><router-link :to="{name:'drag'}">Tab拖拽</router-link></li>
       <li><router-link :to="{name:'drag+'}">Tab拖拽(修改+删除)</router-link></li>
       <li><router-link :to="{name:'zoom'}">图片滚轮缩放</router-link></li>
+       <li><router-link :to="{name:'slot'}">vue插槽</router-link></li>
     </ul>
   </div>
 </template>

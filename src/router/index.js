@@ -28,6 +28,12 @@ export default new Router({
       name:'zoom',
       component: resolve => require(['../components/page/zoom'], resolve),
       meta: {title: '图片滚轮缩放'}
+    },
+    {
+      path:'/slot',
+      name:'slot',
+      component: resolve => require(['../components/page/slot'], resolve),
+      meta: {title: 'vue插槽'}
     }
   ]
 })
