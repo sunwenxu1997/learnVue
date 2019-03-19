@@ -34,6 +34,12 @@ export default new Router({
       name:'slot',
       component: resolve => require(['../components/page/slot'], resolve),
       meta: {title: 'vue插槽'}
+    },
+    {
+      path:'/transition',
+      name:'transition',
+      component: resolve => require(['../components/page/transition'], resolve),
+      meta: {title: 'vue动画过渡'}
     }
   ]
 })
