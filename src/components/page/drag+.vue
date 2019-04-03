@@ -15,25 +15,12 @@
       @sort-start="shouldCancelStart"
       id="box"
     >
-      <!-- @sort-start="shouldCancelStart" -->
-      <SlickItem class="tab" v-for="(i,index) in items" :key="index" :index="index">
+      <SlickItem class="tab" v-for="(i,index) in items" :key="index" :index="index" >
         <el-button  type="text" class="close" @click="close(index)"></el-button>
         <el-button  type="text" class="edit" @click="edit(i)"></el-button>
         <div class="title">{{i.name}}</div>
       </SlickItem>
     </SlickList>
-    <!-- <div id="mask" v-if="maskShow">
-      <div class="mask" @click="maskShow = false;inputShow = false"></div>
-      <div class="hint-box">
-        <div class="content" v-if="inputShow">
-          <input type="text">
-        </div>
-        <div class="content" v-else>请确定删除(删除后将无法恢复)</div>
-        <div class="btn">
-          <span @click="confirm">确定</span>
-        </div>
-      </div>
-    </div> -->
   </div>
 </template>
 

@@ -40,6 +40,12 @@ export default new Router({
       name:'transition',
       component: resolve => require(['../components/page/transition'], resolve),
       meta: {title: 'vue动画过渡'}
+    },
+    {
+      path:'/qrcode',
+      name:'qrcode',
+      component: resolve => require(['../components/page/qrcode'], resolve),
+      meta: {title: 'vue生成二维码'}
     }
   ]
 })

@@ -8,7 +8,7 @@
       <li><router-link :to="{name:'zoom'}">图片滚轮缩放</router-link></li>
        <li><router-link :to="{name:'slot'}">vue插槽</router-link></li>
         <li><router-link :to="{name:'transition'}">vue渐变动画</router-link></li>
-       
+         <li><router-link :to="{name:'qrcode'}">vue生成二维码</router-link></li>
     </ul>
   </div>
 </template>
