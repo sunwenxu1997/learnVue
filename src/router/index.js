@@ -46,6 +46,18 @@ export default new Router({
       name:'qrcode',
       component: resolve => require(['../components/page/qrcode'], resolve),
       meta: {title: 'vue生成二维码'}
+    },
+    {
+      path:'/touch',
+      name:'touch',
+      component: resolve => require(['../components/page/touch'], resolve),
+      meta: {title: 'vue-touch拖拽'}
+    },
+    {
+      path:'/scaleplate',
+      name:'scaleplate',
+      component: resolve => require(['../components/page/scaleplate'], resolve),
+      meta: {title: '标尺'}
     }
   ]
 })

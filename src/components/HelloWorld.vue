@@ -9,6 +9,8 @@
        <li><router-link :to="{name:'slot'}">vue插槽</router-link></li>
         <li><router-link :to="{name:'transition'}">vue渐变动画</router-link></li>
          <li><router-link :to="{name:'qrcode'}">vue生成二维码</router-link></li>
+           <li><router-link :to="{name:'touch'}">vue-touch左右滑跳转路由</router-link></li>
+            <li><router-link :to="{name:'scaleplate'}">标尺滑动</router-link></li>
     </ul>
   </div>
 </template>

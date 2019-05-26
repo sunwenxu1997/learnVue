@@ -10,6 +10,9 @@
         <transition name="move">
           <div class="tab-item" v-if="show1" style="background:#297452;">Click</div>
         </transition>
+        <!-- <transition name="fade" mode="out-in">
+             <div class="tab-item" v-if="show1" style="background:#297452;">Click</div>
+          </transition> -->
       </div>
     </div>
   </div>
@@ -71,6 +74,23 @@ export default {
   animation: move 0.5s reverse;
 }
 @keyframes move {
+  0% {
+    transform: scale(1) translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+  }
+}
+
+.fade-enter-active {
+  animation: move 0.5s;
+}
+.fade-leave-active {
+  animation: move 0.5s reverse;
+}
+@keyframes fade {
   0% {
     transform: scale(1) translateX(200px);
     opacity: 0;
