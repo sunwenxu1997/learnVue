@@ -70,7 +70,8 @@ export default {
      this.$confirm('请确定删除(删除后将无法恢复)！', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
-          type: 'warning'
+          type: 'warning',
+           modal:false
         }).then(() => {
           let newItems = this.items.splice(e, 1);
           this.$message({
@@ -91,7 +92,8 @@ export default {
           cancelButtonText: '取消',
           inputPlaceholder:'请输入1 - 10位的内容',
           inputPattern: /^[A-Za-z0-9]{1,10}$/,
-          inputErrorMessage: '命名格式不正确'
+          inputErrorMessage: '命名格式不正确',
+          modal:false
         }).then(({ value }) => {
          e.name = value
           this.$message({

@@ -1,7 +1,5 @@
 /*! iScroll v5.2.0 ~ (c) 2008-2016 Matteo Spinelli ~ http://cubiq.org/license */
 (function (window, document, Math) {
-	let numberValueMin = Number(sessionStorage.getItem('castMoney'))
-	console.log(numberValueMin)
 	var rAF = window.requestAnimationFrame ||
 		window.webkitRequestAnimationFrame ||
 		window.mozRequestAnimationFrame ||
@@ -912,15 +910,15 @@
 				// var _xin =this.maxScrollX;
 				var _xin = parseInt(((this.maxScrollX) / 5) / 10) * 10;
 				var _x = parseInt((x) / 5);
-				// console.log(_xin)
+				console.log(x)
 				// console.log(parseInt((x)/5))
 				if (_x <= 0) {
 					if (_x == 0) {
-						_tid.innerText = 0 + numberValueMin;
+						_tid.value = 0;
 					} else if (_x >= _xin) {
-						_tid.innerText = (-parseInt(x / 5)) * 100 + numberValueMin;
+						_tid.value = (-parseInt(x / 5)) * 1000;
 					} else {
-						_tid.innerText = 1000000 + numberValueMin;
+						_tid.value = 1000000;
 					}
 				}
 				// console.log(this.maxScrollX)

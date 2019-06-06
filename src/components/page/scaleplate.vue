@@ -1,16 +1,17 @@
 <template>
   <div>
-    <h3 id="numberID"></h3>
+    <!-- <h3 id="numberID"></h3> -->
+    <input id="numberID" type="number" v-model="inputNumber" @input="inputChange()">
     <button @click="toLeft()">往左</button>
     <button @click="toRight()">往右</button>
-    <div class="box">
+    <div class="box" >
       <span class="pillar"></span>
       <div class="wrapper" id="wrapper1">
-        <div class="scroller">
-          <ul class="clearfix">
-            <li v-for="(i,index) in 1001" :key="index">
+        <div class="scroller" :style="`transform: translateX(-${inputNumber*5/1000}px)`">
+          <ul class="clearfix" >
+            <li v-for="(i,index) in 101" :key="index">
               <span>
-                <i>{{index*1000 + castMoney}}</i>
+                <i>{{index*10000}}</i>
               </span>
               <section v-for="(i,index) in 10" :key="index"></section>
             </li>
@@ -27,6 +28,7 @@ import navbarscroll from "@/assets/js/navbarscroll.js";
 export default {
   data() {
     return {
+      inputNumber:'',
       inputValue: 0,
       defaultSelect: 0,
       castMoney: 1000, //起投金额
@@ -51,7 +53,7 @@ export default {
         duibiScreenWidth: 0.1, //单位以rem为准，默认为0.4rem
         scrollerWidth: 1, //单位以px为准，默认为3,[仅用于特殊情况：外层宽度因为小数点造成的不精准情况]
         fingerClick: 0, //目标第0或1个选项触发,必须每一项长度一致，方可用此项
-        defaultSelect: 5,
+        defaultSelect: 8,
         endClickScroll: function(obj) {
           console.log(obj);
         }
@@ -59,6 +61,9 @@ export default {
     });
   },
   methods: {
+    inputChange(){
+      console.log(document.getElementById("numberID"))
+    },
     //把起投金额储存到sessionStorage里面
     setSession() {
       let _this = this;
@@ -124,8 +129,10 @@ ol {
 .box {
   height: 50px;
   position: relative;
-  width: 75%;
+  width: 100%;
   margin: 0 auto;
+  overflow: hidden;
+  
 }
 
 .wrap {
@@ -190,7 +197,7 @@ ol {
   position: absolute;
   z-index: 2;
   left: 50%;
-  margin-left: -3px;
+  margin-left: 0px;
 }
 
 h3 {

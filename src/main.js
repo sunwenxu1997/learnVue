@@ -8,6 +8,11 @@ import '@/assets/css/colour.scss'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import 'swiper/dist/css/swiper.css';
+
+import Share from "vue-social-share";
+Vue.use(Share)
+import 'vue-social-share/dist/client.css';
+
 import VueTouch from 'vue-touch'
 Vue.use(VueTouch, { name: 'v-touch' })
 VueTouch.config.swipe = {

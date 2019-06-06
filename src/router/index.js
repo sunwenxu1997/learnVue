@@ -58,6 +58,19 @@ export default new Router({
       name:'scaleplate',
       component: resolve => require(['../components/page/scaleplate'], resolve),
       meta: {title: '标尺'}
-    }
+    },
+    {
+      path:'/cropper',
+      name:'cropper',
+      component: resolve => require(['../components/page/Cropper'], resolve),
+      meta: {title: '图片剪切'}
+    },
+    {
+      path:'/share',
+      name:'share',
+      component: resolve => require(['../components/page/share'], resolve),
+      meta: {title: '分享'}
+    },
+    
   ]
 })

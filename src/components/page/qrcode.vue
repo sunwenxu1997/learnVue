@@ -19,7 +19,7 @@ export default {
   },
   methods:{
     spread(){
-        this.message = 'https://sit-xiucai-h5.neafex.com/#/'
+        this.message = 'https://itunes.apple.com/cn/app/%E4%B8%9C%E9%87%91%E7%A7%80%E8%B4%A2/id1180475829?mt=8'
     }
   },
   watch: {
