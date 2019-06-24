@@ -71,6 +71,11 @@ export default new Router({
       component: resolve => require(['../components/page/share'], resolve),
       meta: {title: '分享'}
     },
-    
+    {
+      path:'/DigitalLoad',
+      name:'DigitalLoad',
+      component: resolve => require(['../components/page/DigitalLoad'], resolve),
+      meta: {title: '数字加载'}
+    },
   ]
 })

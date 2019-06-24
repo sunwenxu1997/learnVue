@@ -12,7 +12,7 @@
            <li><router-link :to="{name:'touch'}">vue-touch左右滑跳转路由</router-link></li>
             <li><router-link :to="{name:'scaleplate'}">标尺滑动</router-link></li>
              <li><router-link :to="{name:'cropper'}">vue-cropper 头像上传</router-link></li>
-              <li><router-link :to="{name:'share'}">vue-social-share 分享朋友圈</router-link></li>
+              <li><router-link :to="{name:'DigitalLoad'}">数字加载</router-link></li>
     </ul>
   </div>
 </template>

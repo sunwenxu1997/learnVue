@@ -910,15 +910,14 @@
 				// var _xin =this.maxScrollX;
 				var _xin = parseInt(((this.maxScrollX) / 5) / 10) * 10;
 				var _x = parseInt((x) / 5);
-				console.log(x)
 				// console.log(parseInt((x)/5))
 				if (_x <= 0) {
 					if (_x == 0) {
 						_tid.value = 0;
 					} else if (_x >= _xin) {
-						_tid.value = (-parseInt(x / 5)) * 1000;
+						_tid.value = (-parseInt(x / 5)) * 100;
 					} else {
-						_tid.value = 1000000;
+						_tid.value = 100000;
 					}
 				}
 				// console.log(this.maxScrollX)

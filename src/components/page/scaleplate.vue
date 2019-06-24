@@ -1,21 +1,20 @@
 <template>
   <div>
-    <!-- <h3 id="numberID"></h3> -->
-    <input id="numberID" type="number" v-model="inputNumber" @input="inputChange()">
-    <button @click="toLeft()">往左</button>
-    <button @click="toRight()">往右</button>
-    <div class="box" >
-      <span class="pillar"></span>
-      <div class="wrapper" id="wrapper1">
-        <div class="scroller" :style="`transform: translateX(-${inputNumber*5/1000}px)`">
-          <ul class="clearfix" >
-            <li v-for="(i,index) in 101" :key="index">
-              <span>
-                <i>{{index*10000}}</i>
-              </span>
-              <section v-for="(i,index) in 10" :key="index"></section>
-            </li>
-          </ul>
+    <div class="scaleplate-box">
+      <input id="numberID" type="number" v-model="inputNumber" >
+      <div class="box">
+        <span class="pillar"></span>
+        <div class="wrapper" id="wrapper1">
+          <div class="scroller" :style="`transform: translateX(-${inputNumber*5/100}px)`">
+            <ul class="clearfix">
+              <li v-for="(i,index) in 101" :key="index">
+                <span>
+                  <i>{{index*1000}}</i>
+                </span>
+                <section v-for="(i,index) in 10" :key="index"></section>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -28,18 +27,15 @@ import navbarscroll from "@/assets/js/navbarscroll.js";
 export default {
   data() {
     return {
-      inputNumber:'',
+      inputNumber: "",
       inputValue: 0,
       defaultSelect: 0,
-      castMoney: 1000, //起投金额
-      IScroll: window.IScroll
     };
   },
   watch: {
     inputValue(n, o) {
       if (n != 0) {
-        console.log(111);
-        this.defaultSelect = Number(this.inputValue) / 1000;
+        this.defaultSelect = Number(this.inputValue) / 100;
       }
     }
   },
@@ -61,57 +57,20 @@ export default {
     });
   },
   methods: {
-    inputChange(){
-      console.log(document.getElementById("numberID"))
-    },
+
     //把起投金额储存到sessionStorage里面
     setSession() {
       let _this = this;
       window.sessionStorage.setItem("castMoney", _this.castMoney);
-    },
-    toLeft() {
-      this.inputValue = document.getElementById("numberID").innerText;
-      this.defaultSelect = Math.floor(Number(this.inputValue) / 1000);
-      this.defaultSelect -= 5;
-      if (this.defaultSelect < 0) {
-        this.defaultSelect = 1;
-      }
-      $(".wrapper").navbarscroll({
-        duibiScreenWidth: 0.1, //单位以rem为准，默认为0.4rem
-        scrollerWidth: 1, //单位以px为准，默认为3,[仅用于特殊情况：外层宽度因为小数点造成的不精准情况]
-        defaultSelect: this.defaultSelect,
-        fingerClick: 0, //目标第0或1个选项触发,必须每一项长度一致，方可用此项
-        endClickScroll: function(obj) {
-          console.log(obj);
-        }
-      });
-      this.inputValue = document.getElementById("numberID").innerText;
-      console.log(this.inputValue);
-    },
-    toRight() {
-      this.inputValue = document.getElementById("numberID").innerText;
-      this.defaultSelect = Math.floor(Number(this.inputValue) / 1000);
-      this.defaultSelect += 5;
-      if (this.defaultSelect > 997) {
-        this.defaultSelect = 997;
-      }
-      $(".wrapper").navbarscroll({
-        duibiScreenWidth: 0.1, //单位以rem为准，默认为0.4rem
-        scrollerWidth: 1, //单位以px为准，默认为3,[仅用于特殊情况：外层宽度因为小数点造成的不精准情况]
-        defaultSelect: this.defaultSelect,
-        fingerClick: 0, //目标第0或1个选项触发,必须每一项长度一致，方可用此项
-        endClickScroll: function(obj) {
-          console.log(obj);
-        }
-      });
-      this.inputValue = document.getElementById("numberID").innerText;
-      console.log(this.inputValue);
     }
   }
 };
 </script>
 
 <style scoped>
+.scaleplate-box{
+  margin-top: 20%;
+}
 * {
   padding: 0;
   margin: 0;
@@ -132,7 +91,6 @@ ol {
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
-  
 }
 
 .wrap {
