@@ -13,6 +13,7 @@
             <li><router-link :to="{name:'scaleplate'}">标尺滑动</router-link></li>
              <li><router-link :to="{name:'cropper'}">vue-cropper 头像上传</router-link></li>
               <li><router-link :to="{name:'DigitalLoad'}">数字加载</router-link></li>
+               <li><router-link :to="{name:'DatePicker'}">日期选择器范围</router-link></li>
     </ul>
   </div>
 </template>
