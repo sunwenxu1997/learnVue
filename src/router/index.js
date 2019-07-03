@@ -83,5 +83,11 @@ export default new Router({
       component: resolve => require(['../components/page/DatePicker'], resolve),
       meta: {title: '日期选择器范围'}
     },
+    {
+      path:'/copy',
+      name:'copy',
+      component: resolve => require(['../components/page/copy'], resolve),
+      meta: {title: '一键复制'}
+    }
   ]
 })

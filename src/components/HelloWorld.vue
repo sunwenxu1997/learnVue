@@ -8,12 +8,15 @@
       <li><router-link :to="{name:'zoom'}">图片滚轮缩放</router-link></li>
        <li><router-link :to="{name:'slot'}">vue插槽</router-link></li>
         <li><router-link :to="{name:'transition'}">vue渐变动画</router-link></li>
-         <li><router-link :to="{name:'qrcode'}">vue生成二维码</router-link></li>
+         <li><router-link :to="{name:'qrcode',query:{id:'12331',code:'FGD1110',phone:'15518270529'}}">vue生成二维码</router-link></li>
            <li><router-link :to="{name:'touch'}">vue-touch左右滑跳转路由</router-link></li>
             <li><router-link :to="{name:'scaleplate'}">标尺滑动</router-link></li>
              <li><router-link :to="{name:'cropper'}">vue-cropper 头像上传</router-link></li>
               <li><router-link :to="{name:'DigitalLoad'}">数字加载</router-link></li>
                <li><router-link :to="{name:'DatePicker'}">日期选择器范围</router-link></li>
+               <li><router-link :to="{name:'share'}">微信分享</router-link></li>
+                <li><router-link :to="{name:'copy'}">一键复制</router-link></li>
+
     </ul>
   </div>
 </template>

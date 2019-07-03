@@ -12,7 +12,10 @@ import 'swiper/dist/css/swiper.css';
 import Share from "vue-social-share";
 Vue.use(Share)
 import 'vue-social-share/dist/client.css';
-
+import wx from 'weixin-js-sdk'
+Vue.use(wx)
+import clipboard from 'clipboard'; //复制插件
+Vue.prototype.clipboard = clipboard;
 import VueTouch from 'vue-touch'
 Vue.use(VueTouch, { name: 'v-touch' })
 VueTouch.config.swipe = {

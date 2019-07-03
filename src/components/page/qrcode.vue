@@ -2,10 +2,10 @@
   <div>
     <!-- //二维码生成 -->
     <!-- // 用于输入内容的input -->
-    <input v-model="message">
+    <!-- <input v-model="message"> -->
     <!-- // 将获取到的信息画到画布上 -->
     <canvas id="msg"></canvas>
-   <button @click="spread">分享</button>
+   <!-- <button @click="spread">分享</button> -->
   </div>
 </template>
 
@@ -14,8 +14,11 @@ import QRCode from "qrcode";
 export default {
   data() {
     return {
-      message: ""
+      message: ''
     };
+  },
+  created(){
+     this.message = window.location.href
   },
   methods:{
     spread(){

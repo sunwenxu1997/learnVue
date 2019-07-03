@@ -1,51 +1,75 @@
 <template>
-  <div>
-    <!-- 分享 -->
-    <a title="分享到QQ好友" href="javascript:void(0)" class="share_qq" @click="shareToqq()">
-      <img src="http://images.cnblogs.com/cnblogs_com/a-cat/1193051/o_img_qq.png">
-    </a>
+  <div style="margin-top:100px;">
+    <button @click="shareToQQ()">分享到QQ</button>
+    <button @click="shareToRoom()">分享到QQ空间</button>
+    <button @click="shareToMicroblog()">分享到微博</button>
   </div>
 </template>
-
 <script>
-import Share from "vue-social-share";
 export default {
-  components: {
-    share: Share
-  },
   data() {
-    return {
-      config: {
-        url: "", // 网址，默认使用 window.location.href
-        source: "", // 来源（QQ空间会用到）, 默认读取head标签：<meta name="site" content="http://overtrue" />
-        title: "", // 标题，默认读取 document.title 或者 <meta name="title" content="share.js" />
-        description: "", // 描述, 默认读取head标签：<meta name="description" content="PHP弱类型的实现原理分析" />
-        image: "", // 图片, 默认取网页中第一个img标签
-        sites: ["qzone", "qq", "weibo", "wechat", "douban"], // 启用的站点
-        disabled: ["google", "facebook", "twitter"], // 禁用的站点
-        wechatQrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
-        wechatQrcodeHelper:
-          "<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>"
-      }
-    };
+    return {};
   },
   methods: {
-    shareToqq() {
-      var _title,
-        _source,
-        _sourceUrl,
-        _pic,
-        _showcount,
-        _desc,
-        _summary,
-        _site,
-        _url = "http://www.newsucai.cn",
-        _pic = "http://www.newsucai.cn/static/home/images/jpg/__header.jpg";
-      var _shareUrl =
-        "https://connect.qq.com/widget/shareqq/iframe_index.html?";
-      _shareUrl += "url=" + encodeURIComponent(_url || location.href); //分享的链接
-      _shareUrl += "&title=" + encodeURIComponent(_title || document.title); //分享的标题
-      window.open(_shareUrl, "_blank");
+    //分享到QQ好友(PC端可用)
+    shareToQQ() {
+      //此处分享链接内无法携带图片
+      const share = {
+        title: "东金秀财",
+        desc: "描述",
+        share_url: "https://xiucai.neafex.com/#/"
+      };
+      location.replace(
+        "https://connect.qq.com/widget/shareqq/index.html?url=" +
+          encodeURIComponent(share.share_url) +
+          "&title=" +
+          share.title +
+          "&desc=" +
+          share.desc
+      );
+    },
+    //分享到QQ空间(可用)
+    shareToRoom() {
+        //自定义内容
+      const share = {
+        title: "东金秀财",
+        desc: "描述",
+        image_url: ["https://oss.neafex.com/xiucai-img/wxgzh.jpeg"],
+        share_url: "https://xiucai.neafex.com/#/"
+      };
+      let image_urls = share.image_url.map(function(image) {
+        return encodeURIComponent(image);
+      });
+       //跳转地址
+      location.replace(
+        "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=" +
+          encodeURIComponent(share.share_url) +
+          "&title=" +
+          share.title +
+          "&pics=" +
+          image_urls.join("|") +
+          "&summary=" +
+          share.desc
+      );
+    },
+    //分享到微博(可用)
+    shareToMicroblog() {
+      //自定义内容
+      const share = {
+        title: "东金秀财",
+        image_url: ["https://oss.neafex.com/xiucai-img/wxgzh.jpeg"],
+        share_url: "https://xiucai.neafex.com/#/"
+      };
+      //跳转地址
+      location.replace(
+        "https://service.weibo.com/share/share.php?url=" +
+          encodeURIComponent(share.share_url) +
+          "&title=" +
+          share.title +
+          "&pic=" +
+          share.image_url +
+          "&searchPic=true"
+      );
     }
   }
 };
