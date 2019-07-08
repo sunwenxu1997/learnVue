@@ -88,6 +88,17 @@ export default new Router({
       name:'copy',
       component: resolve => require(['../components/page/copy'], resolve),
       meta: {title: '一键复制'}
-    }
+    },{
+      path:'/InfiniteScroll',
+      name:'InfiniteScroll',
+      component: resolve => require(['../components/page/InfiniteScroll'], resolve),
+      meta: {title: 'Element-ui 无限滚动'}
+    },
+    {
+      path:'/clickButton',
+      name:'clickButton',
+      component: resolve => require(['../components/page/clickButton'], resolve),
+      meta: {title: '按键点击效果'}
+    },
   ]
 })
