@@ -100,5 +100,17 @@ export default new Router({
       component: resolve => require(['../components/page/clickButton'], resolve),
       meta: {title: '按键点击效果'}
     },
+    {
+      path:'/swiper',
+      name:'swiper',
+      component: resolve => require(['../components/page/swiper'], resolve),
+      meta: {title: 'swiper应用'}
+    },
+    {
+      path:'/mock',
+      name:'mock',
+      component: resolve => require(['../components/page/mock'], resolve),
+      meta: {title: 'mock.js的使用'}
+    },
   ]
 })

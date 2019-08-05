@@ -18,6 +18,8 @@
                 <li><router-link :to="{name:'copy'}">一键复制</router-link></li>
                  <li><router-link :to="{name:'InfiniteScroll'}">Element-ui 无限滚动</router-link></li>
                  <li><router-link :to="{name:'clickButton'}">按键点击效果</router-link></li>
+                 <li><router-link :to="{name:'swiper'}">swiper的使用</router-link></li>
+                  <li><router-link :to="{name:'mock'}">mock.js的使用</router-link></li>
 
     </ul>
   </div>

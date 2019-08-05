@@ -6,9 +6,13 @@
   </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
   data() {
     return {};
+  },
+  created(){
+    this.getImg()
   },
   methods: {
     //分享到QQ好友(PC端可用)
@@ -30,7 +34,7 @@ export default {
     },
     //分享到QQ空间(可用)
     shareToRoom() {
-        //自定义内容
+      //自定义内容
       const share = {
         title: "东金秀财",
         desc: "描述",
@@ -40,7 +44,7 @@ export default {
       let image_urls = share.image_url.map(function(image) {
         return encodeURIComponent(image);
       });
-       //跳转地址
+      //跳转地址
       location.replace(
         "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=" +
           encodeURIComponent(share.share_url) +
@@ -70,6 +74,27 @@ export default {
           share.image_url +
           "&searchPic=true"
       );
+    },
+    getImg() {
+      axios
+        .get(
+          "https://oss-sit.neafex.com/neafex-spreadH5Web/qrcode/东金秀财/15518270529.png",
+          { responseType: "blob" }
+        )
+        .then(res => {
+          console.log(res);
+          let _this = this;
+          var a = new FileReader();
+          a.onload = function(e) {
+            // callback(e.target.result);
+            _this.src = e.target.result;
+            console.log(e.target.result);
+          };
+          a.readAsDataURL(res.data);
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
 };

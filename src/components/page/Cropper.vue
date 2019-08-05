@@ -79,12 +79,19 @@ export default {
       this.$refs.cropper.getCropBlob(data => {
         let img = window.URL.createObjectURL(data);
         console.log(data);
-        formData.append("file", data, this.fileName);
-        _this.$message({
+        // formData.append("file", data, this.fileName);
+        console.log(img)
+        let uploadData = new FormData();
+         uploadData.append("file", data);
+        this.$axios.post('https://xiucai-api-sit.neafex.com/core-api/userSignIn/uploadUserAvatar',uploadData).then(res=>{
+          console.log(res)
+           _this.$message({
           //element-ui的消息Message消息提示组件
           type: "success",
           message: "上传成功"
         });
+        })
+       
       });
     },
     // 实时预览函数
