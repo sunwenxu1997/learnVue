@@ -12,7 +12,6 @@ export default {
     return {};
   },
   created(){
-    this.getImg()
   },
   methods: {
     //分享到QQ好友(PC端可用)
@@ -74,27 +73,6 @@ export default {
           share.image_url +
           "&searchPic=true"
       );
-    },
-    getImg() {
-      axios
-        .get(
-          "https://oss-sit.neafex.com/neafex-spreadH5Web/qrcode/东金秀财/15518270529.png",
-          { responseType: "blob" }
-        )
-        .then(res => {
-          console.log(res);
-          let _this = this;
-          var a = new FileReader();
-          a.onload = function(e) {
-            // callback(e.target.result);
-            _this.src = e.target.result;
-            console.log(e.target.result);
-          };
-          a.readAsDataURL(res.data);
-        })
-        .catch(err => {
-          console.log(err);
-        });
     }
   }
 };

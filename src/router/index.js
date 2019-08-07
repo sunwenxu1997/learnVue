@@ -112,5 +112,17 @@ export default new Router({
       component: resolve => require(['../components/page/mock'], resolve),
       meta: {title: 'mock.js的使用'}
     },
+    {
+      path:'/SearchHistory',
+      name:'SearchHistory',
+      component: resolve => require(['../components/page/SearchHistory'], resolve),
+      meta: {title: '历史搜索功能'}
+    },
+    {
+      path:'/DateSchedule',
+      name:'DateSchedule',
+      component: resolve => require(['../components/page/DateSchedule'], resolve),
+      meta: {title: '日期进度条'}
+    },
   ]
 })
