@@ -71,7 +71,7 @@ export default {
   name: "HelloWorld",
   data() {
     return {
-      msg: "Welcome to My Vue"
+      msg: "Welcome to Vue,Hei Hei"
     };
   }
 };
