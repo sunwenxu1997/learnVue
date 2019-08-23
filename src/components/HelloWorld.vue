@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-     <img src="../assets/img/logo.png">
+    <img src="../assets/img/logo.png" />
     <h1>{{ msg }}</h1>
     <ul >
      <li ><router-link :style="`color:${$ThemeColor} !important`" :to="{name:'drag'}">Tab拖拽</router-link></li>
@@ -33,13 +33,28 @@ export default {
   name: "HelloWorld",
   data() {
     return {
-      msg: "Welcome to My Vue.js App"
+      msg: "Welcome to Vue,Hei Hei"
     };
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-
+<style scoped>
+.hello {
+  margin-top: 200px;
+  cursor: default;
+}
+ul {
+  margin-top: 50px;
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #338d65;
+}
 </style>
