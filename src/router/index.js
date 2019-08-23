@@ -124,5 +124,11 @@ export default new Router({
       component: resolve => require(['../components/page/DateSchedule'], resolve),
       meta: {title: '日期进度条'}
     },
+    {
+      path:'/SlidingBlock',
+      name:'SlidingBlock',
+      component: resolve => require(['../components/page/SlidingBlock'], resolve),
+      meta: {title: '滑块拖动'}
+    },
   ]
 })

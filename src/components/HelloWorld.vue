@@ -2,8 +2,8 @@
   <div class="hello">
      <img src="../assets/img/logo.png">
     <h1>{{ msg }}</h1>
-    <ul>
-     <li><router-link :to="{name:'drag'}">Tab拖拽</router-link></li>
+    <ul >
+     <li ><router-link :style="`color:${$ThemeColor} !important`" :to="{name:'drag'}">Tab拖拽</router-link></li>
       <li><router-link :to="{name:'drag+'}">Tab拖拽(修改+删除)</router-link></li>
       <li><router-link :to="{name:'zoom'}">图片滚轮缩放</router-link></li>
        <li><router-link :to="{name:'slot'}">vue插槽</router-link></li>
@@ -22,6 +22,7 @@
                   <li><router-link :to="{name:'mock'}">mock.js的使用</router-link></li>
                    <li><router-link :to="{name:'SearchHistory'}">历史搜索功能</router-link></li>
                    <li><router-link :to="{name:'DateSchedule'}">日期进度条</router-link></li>
+                    <li><router-link :to="{name:'SlidingBlock'}">滑块拖动</router-link></li>
 
     </ul>
   </div>
@@ -39,21 +40,6 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.hello{
-  margin-top: 200px;
-  cursor: default;
-}
-ul {
-  margin-top: 50px;
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style scoped lang="scss">
+
 </style>

@@ -4,7 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import '@/assets/css/index.scss'
-import '@/assets/css/colour.scss'
+import '@/assets/css/green.scss'
+import vfilters from '@/assets/js/vfilters.js'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import 'swiper/dist/css/swiper.css';
@@ -16,7 +17,9 @@ import wx from 'weixin-js-sdk'
 Vue.use(wx)
 import clipboard from 'clipboard'; //复制插件
 Vue.prototype.clipboard = clipboard;
+const ThemeColor = vfilters.GetQueryString("ThemeColor")
 Vue.prototype.$axios = axios;
+Vue.prototype.$ThemeColor = ThemeColor;
 import VueTouch from 'vue-touch'
 Vue.use(VueTouch, { name: 'v-touch' })
 VueTouch.config.swipe = {

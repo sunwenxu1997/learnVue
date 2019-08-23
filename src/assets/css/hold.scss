@@ -1,0 +1,55 @@
+.hello{
+    margin-top: 200px;
+    cursor: default;
+     ul {
+    margin-top: 50px;
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  a {
+    color: $base;
+  }
+  }
+  
+.DateSchedule{
+    margin: 0 auto;
+    margin-top: 50%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: $base;
+    // 背景进度颜色
+    .strip{
+       width: 100%;
+       margin: 0 40px;
+       height: 5px;
+       background: rgb(245, 244, 244);
+       position: relative;
+       .dot{
+           width: 8px;
+           height: 8px;
+           border-radius: 50%;
+        //    background: white;
+        background: #3676c0;
+           box-shadow: 1px 1px 5px rgb(165, 164, 164);
+           position: absolute;
+           top: -2px;
+           section{
+               width: 100%;
+               font-size: 0.75rem;
+               color: #808080;
+               min-width: 100px;
+               position: relative;
+               left: -45px;
+           }
+           .time{
+               top: -20px;
+           }
+       }
+    }
+}
