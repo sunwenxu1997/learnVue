@@ -23,6 +23,9 @@
                    <li><router-link :to="{name:'SearchHistory'}">历史搜索功能</router-link></li>
                    <li><router-link :to="{name:'DateSchedule'}">日期进度条</router-link></li>
                     <li><router-link :to="{name:'SlidingBlock'}">滑块拖动</router-link></li>
+                    <li><router-link :to="{name:'SlidingBlock+'}">滑块拖动+</router-link></li>
+                     <li><router-link :to="{name:'wxScan'}">微信扫一扫</router-link></li>
+                      <li><router-link :to="{name:'PackagingComponents'}">封装组件</router-link></li>
 
     </ul>
   </div>

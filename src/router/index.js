@@ -130,5 +130,24 @@ export default new Router({
       component: resolve => require(['../components/page/SlidingBlock'], resolve),
       meta: {title: '滑块拖动'}
     },
+    {
+      path:'/SlidingBlock+',
+      name:'SlidingBlock+',
+      component: resolve => require(['../components/page/SlidingBlock+'], resolve),
+      meta: {title: '滑块拖动+'}
+    },
+    {
+      path:'/wxScan',
+      name:'wxScan',
+      component: resolve => require(['../components/page/wxScan'], resolve),
+      meta: {title: '微信扫一扫'}
+    },
+    {
+      path:'/PackagingComponents',
+      name:'PackagingComponents',
+      component: resolve => require(['../components/page/PackagingComponents'], resolve),
+      meta: {title: '封装组件'}
+    },
+    
   ]
 })
