@@ -148,6 +148,11 @@ export default new Router({
       component: resolve => require(['../components/page/PackagingComponents'], resolve),
       meta: {title: '封装组件'}
     },
-    
+    {
+      path:'/Roll',
+      name:'Roll',
+      component: resolve => require(['../components/page/Roll'], resolve),
+      meta: {title: '滚动效果'}
+    },
   ]
 })

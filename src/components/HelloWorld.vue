@@ -26,6 +26,7 @@
                     <li><router-link :to="{name:'SlidingBlock+'}">滑块拖动+</router-link></li>
                      <li><router-link :to="{name:'wxScan'}">微信扫一扫</router-link></li>
                       <li><router-link :to="{name:'PackagingComponents'}">封装组件</router-link></li>
+                        <li><router-link :to="{name:'Roll'}">滚动效果</router-link></li>
 
     </ul>
   </div>

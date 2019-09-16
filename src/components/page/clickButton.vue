@@ -22,16 +22,15 @@ export default {
   data() {
     return {
       btnIndex: null,
-      hoverIndex: ""
+      hoverIndex: null
     };
   },
   methods: {
     moveBtn(index) {
-      //   console.log(index);
+      console.log(index)
       this.hoverIndex = index;
     },
     downBtn(e) {
-      //   console.log(e);
       if (this.btnIndex == this.hoverIndex) {
         this.btnIndex = null;
       }
@@ -42,7 +41,6 @@ export default {
     },
     clickBtn(index) {
       this.btnIndex = index;
-      //   this.$refs['cover'][index].sty
     }
   }
 };
@@ -59,12 +57,12 @@ export default {
   line-height: 50px;
   font-weight: bold;
   text-align: center;
-  /* background: #dcf0ee; */
   color: #808080;
   cursor: pointer;
   border-right: 1px solid #42b983;
   position: relative;
   overflow: hidden;
+  user-select: none;
 }
 .box .btn:last-child {
   border-right: none;
@@ -74,9 +72,8 @@ export default {
   color: #42b983;
 }
 .changeCover {
-  /* transition: 0.5s; */
-  width: 1px;
-  height: 1px;
+  width: 2px;
+  height: 2px;
   position: absolute;
   z-index: -1;
   top: 0;
@@ -89,7 +86,7 @@ export default {
   transition: 0.7s;
   transform: scale(200);
   /* 使用动画，点击后背景色消失 */
-  /* animation: change 0.7s ease both 1; */
+  animation: change 0.7s ease both 1;
 }
 @keyframes change {
   0% {
