@@ -160,5 +160,11 @@ export default new Router({
       component: resolve => require(['../components/page/DepthCards'], resolve),
       meta: {title: '深度卡片'}
     },
+    {
+      path:'/RuptureText',
+      name:'RuptureText',
+      component: resolve => require(['../components/page/RuptureText'], resolve),
+      meta: {title: '破裂文本'}
+    },
   ]
 })
