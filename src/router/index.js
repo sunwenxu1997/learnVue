@@ -154,5 +154,11 @@ export default new Router({
       component: resolve => require(['../components/page/Roll'], resolve),
       meta: {title: '滚动效果'}
     },
+    {
+      path:'/DepthCards',
+      name:'DepthCards',
+      component: resolve => require(['../components/page/DepthCards'], resolve),
+      meta: {title: '深度卡片'}
+    },
   ]
 })

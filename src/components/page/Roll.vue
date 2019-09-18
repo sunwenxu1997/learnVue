@@ -8,6 +8,7 @@
         :class="num <= index && index <= defaultRoll+num?'line':'lineRoll'"
       >{{index+1}}</section>
     </div>
+     {{time}}
   </div>
 </template>
 
@@ -17,7 +18,7 @@ export default {
     return {
       sum: 50, //总行数
       defaultRoll: 13, //默认行数，主要根据css样式中指定容器的高而定（此处为 600px/50px = 12）
-      num: 0 //当前滚动条滚动距离相当于滚动了几行
+      num: 0, //当前滚动条滚动距离相当于滚动了几行
     };
   },
   mounted() {

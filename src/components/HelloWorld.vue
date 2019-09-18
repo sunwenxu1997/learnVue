@@ -27,6 +27,7 @@
                      <li><router-link :to="{name:'wxScan'}">微信扫一扫</router-link></li>
                       <li><router-link :to="{name:'PackagingComponents'}">封装组件</router-link></li>
                         <li><router-link :to="{name:'Roll'}">滚动效果</router-link></li>
+                        <li><router-link :to="{name:'DepthCards'}">深度卡片</router-link></li>
 
     </ul>
   </div>
