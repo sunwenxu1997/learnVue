@@ -166,5 +166,11 @@ export default new Router({
       component: resolve => require(['../components/page/RuptureText'], resolve),
       meta: {title: '破裂文本'}
     },
+    {
+      path:'/StickyBall',
+      name:'StickyBall',
+      component: resolve => require(['../components/page/StickyBall'], resolve),
+      meta: {title: '黏黏的球'}
+    },
   ]
 })
