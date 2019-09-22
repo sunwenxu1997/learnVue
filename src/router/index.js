@@ -172,5 +172,11 @@ export default new Router({
       component: resolve => require(['../components/page/StickyBall'], resolve),
       meta: {title: '黏黏的球'}
     },
+    {
+      path:'/Wave',
+      name:'Wave',
+      component: resolve => require(['../components/page/Wave'], resolve),
+      meta: {title: 'canvas波浪效果'}
+    },
   ]
 })

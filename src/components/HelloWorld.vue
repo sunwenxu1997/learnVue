@@ -30,6 +30,7 @@
     <li><router-link :to="{name:'DepthCards'}">深度卡片</router-link></li>
     <li><router-link :to="{name:'RuptureText'}">破裂文本</router-link></li>
     <li><router-link :to="{name:'StickyBall'}">黏黏的球</router-link></li>
+    <li><router-link :to="{name:'Wave'}">canvas波浪效果</router-link></li>
     </ul>
   </div>
 </template>
