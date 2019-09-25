@@ -178,5 +178,11 @@ export default new Router({
       component: resolve => require(['../components/page/Wave'], resolve),
       meta: {title: 'canvas波浪效果'}
     },
+    {
+      path:'/circularRing',
+      name:'circularRing',
+      component: resolve => require(['../components/page/circularRing'], resolve),
+      meta: {title: '圆环进度条效果'}
+    },
   ]
 })
