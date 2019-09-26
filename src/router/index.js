@@ -131,10 +131,10 @@ export default new Router({
       meta: {title: '滑块拖动'}
     },
     {
-      path:'/SlidingBlock+',
-      name:'SlidingBlock+',
-      component: resolve => require(['../components/page/SlidingBlock+'], resolve),
-      meta: {title: '滑块拖动+'}
+      path:'/ChannerBanner',
+      name:'ChannerBanner',
+      component: resolve => require(['../components/page/ChannerBanner'], resolve),
+      meta: {title: '轮播图切换效果'}
     },
     {
       path:'/wxScan',

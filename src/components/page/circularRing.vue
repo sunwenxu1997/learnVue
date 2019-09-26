@@ -2,7 +2,7 @@
   <div class="overall">
     <div class="annulus-box">
       <div class="plan">
-          <span>{{plan}}%</span>
+          <span></span>
       </div>
       <div class="annulus-bck">
         <div class="annulus-left">
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import anime from "animejs/lib/anime.es.js";
 export default {
   data() {
     return {
@@ -27,6 +28,14 @@ export default {
   },
   mounted() {
     this.planChange();
+    let _this = this
+    anime({
+      targets:'.plan span',
+      innerHTML:['0%',`${_this.plan}%`],
+      round: 1,
+      easing: "linear",
+      delay:500, //动画延时
+    });
   },
   methods: {
     planChange() {
