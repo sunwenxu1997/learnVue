@@ -184,5 +184,11 @@ export default new Router({
       component: resolve => require(['../components/page/circularRing'], resolve),
       meta: {title: '圆环进度条效果'}
     },
+    {
+      path:'/ParticleButton',
+      name:'ParticleButton',
+      component: resolve => require(['../components/page/ParticleButton'], resolve),
+      meta: {title: '粒子按键效果'}
+    },
   ]
 })
