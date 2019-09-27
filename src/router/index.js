@@ -190,5 +190,17 @@ export default new Router({
       component: resolve => require(['../components/page/ParticleButton'], resolve),
       meta: {title: '粒子按键效果'}
     },
+    {
+      path:'/NavigationBar',
+      name:'NavigationBar',
+      component: resolve => require(['../components/page/NavigationBar'], resolve),
+      meta: {title: '滑动导航栏'}
+    },
+    {
+      path:'/other',
+      name:'other',
+      component: resolve => require(['../components/page/other'], resolve),
+      meta: {title: '其他'}
+    },
   ]
 })
