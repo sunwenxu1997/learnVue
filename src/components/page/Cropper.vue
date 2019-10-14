@@ -81,16 +81,16 @@ export default {
         console.log(data);
         // formData.append("file", data, this.fileName);
         console.log(img)
-        let uploadData = new FormData();
-         uploadData.append("file", data);
-        this.$axios.post('https://xiucai-api-sit.neafex.com/core-api/userSignIn/uploadUserAvatar',uploadData).then(res=>{
-          console.log(res)
-           _this.$message({
-          //element-ui的消息Message消息提示组件
-          type: "success",
-          message: "上传成功"
-        });
-        })
+        // let uploadData = new FormData();
+        //  uploadData.append("file", data);
+        // this.$axios.post('https://xiucai-api-sit.neafex.com/core-api/userSignIn/uploadUserAvatar',uploadData).then(res=>{
+        //   console.log(res)
+        //    _this.$message({
+        //   //element-ui的消息Message消息提示组件
+        //   type: "success",
+        //   message: "上传成功"
+        // });
+        // })
        
       });
     },
@@ -115,16 +115,17 @@ export default {
       //上传图片
       var file = e.target.files[0];
       _this.fileName = file.name;
-      if (!/\.(gif|jpg|jpeg|png|bmp|GIF|JPG|PNG)$/.test(e.target.value)) {
-        alert("图片类型必须是.gif,jpeg,jpg,png,bmp中的一种");
-        return false;
-      }
+      // if (!/\.(gif|jpg|jpeg|png|bmp|GIF|JPG|PNG)$/.test(e.target.value)) {
+      //   alert("图片类型必须是.gif,jpeg,jpg,png,bmp中的一种");
+      //   return false;
+      // }
       var reader = new FileReader();
       reader.onload = e => {
         let data;
         if (typeof e.target.result === "object") {
           // 把Array Buffer转化为blob 如果是base64不需要
           data = window.URL.createObjectURL(new Blob([e.target.result]));
+          console.log(data)
         } else {
           data = e.target.result;
         }

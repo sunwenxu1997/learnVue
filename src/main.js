@@ -27,7 +27,7 @@ VueTouch.config.swipe = {
 }
 Vue.use(ElementUI, { size: 'small' });
 // 引入mockjs
-require('./mock.js')
+// require('./mock.js')
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
