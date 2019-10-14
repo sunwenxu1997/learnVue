@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store/index'
 import '@/assets/css/index.scss'
 import '@/assets/css/green.scss'
 import vfilters from '@/assets/js/vfilters.js'
@@ -33,6 +34,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'

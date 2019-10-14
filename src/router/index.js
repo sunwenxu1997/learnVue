@@ -197,6 +197,12 @@ export default new Router({
       meta: {title: '滑动导航栏'}
     },
     {
+      path:'/vuex',
+      name:'vuex',
+      component: resolve => require(['../components/page/vuex'], resolve),
+      meta: {title: 'vuex的使用'}
+    },
+    {
       path:'/other',
       name:'other',
       component: resolve => require(['../components/page/other'], resolve),
