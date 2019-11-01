@@ -203,6 +203,12 @@ export default new Router({
       meta: {title: 'vuex的使用'}
     },
     {
+      path:'/waterfallFlow',
+      name:'waterfallFlow',
+      component: resolve => require(['../components/page/waterfallFlow'], resolve),
+      meta: {title: '瀑布流加载'}
+    },
+    {
       path:'/other',
       name:'other',
       component: resolve => require(['../components/page/other'], resolve),

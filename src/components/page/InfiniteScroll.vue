@@ -1,6 +1,5 @@
 <template>
   <div id="box">
-    <input type="number" @mousewheel="scrollFunc()" />
     <div class="box" v-infinite-scroll="load" infinite-scroll-disabled="disabled">
       <ul class="list">
         <li v-for="(i,index) in list" class="list-item" :key="index">{{ i.noticeTitle }}</li>
@@ -36,19 +35,6 @@ export default {
     this.getMessage();
   },
   methods: {
-    scrollFunc(evt) {
-      evt = evt || window.event;
-      if (evt.preventDefault) {
-        // Firefox
-        evt.preventDefault();
-        evt.stopPropagation();
-      } else {
-        // IE
-        evt.cancelBubble = true;
-        evt.returnValue = false;
-      }
-      return false;
-    },
     load() {
       //滑到底部时进行加载
       this.loading = true;
@@ -59,13 +45,21 @@ export default {
     },
     getMessage() {
       let params = {
+        templateId: "",
         pageNumber: this.count,
         pageSize: 10 //每页查询条数
       };
       this.$axios
         .post(
-          "https://xiucai-api-sit.neafex.com/website/website/getNoticePage",
-          params
+          "https://xiucai-api-prod0625.neafex.com/website/website/getNewsList",
+          params,
+          {
+            headers: {
+              "channel-code": "AXXXXXXXXX",
+              "client-type": "MOH5",
+              version: "0.0.1"
+            }
+          }
         )
         .then(res => {
           console.log(res);

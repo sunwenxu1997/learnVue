@@ -35,6 +35,7 @@
     <li><router-link :to="{name:'ParticleButton'}">粒子按键效果</router-link></li>
     <li><router-link :to="{name:'NavigationBar'}">滑动导航栏</router-link></li>
     <li><router-link :to="{name:'vuex'}">vuex的使用</router-link></li>
+    <li><router-link :to="{name:'waterfallFlow'}">瀑布流加载</router-link></li>
     <li><router-link :to="{name:'other'}">其他</router-link></li>
     </ul>
   </div>
