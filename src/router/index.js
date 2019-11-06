@@ -209,6 +209,12 @@ export default new Router({
       meta: {title: '瀑布流加载'}
     },
     {
+      path:'/blockLoading',
+      name:'blockLoading',
+      component: resolve => require(['../components/page/blockLoading'], resolve),
+      meta: {title: '网页模块加载'}
+    },
+    {
       path:'/other',
       name:'other',
       component: resolve => require(['../components/page/other'], resolve),
