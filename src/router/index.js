@@ -215,6 +215,12 @@ export default new Router({
       meta: {title: '网页模块加载'}
     },
     {
+      path:'/assignBlock',
+      name:'assignBlock',
+      component: resolve => require(['../components/page/assignBlock'], resolve),
+      meta: {title: '滑动到指定模块'}
+    },
+    {
       path:'/other',
       name:'other',
       component: resolve => require(['../components/page/other'], resolve),
