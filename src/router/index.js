@@ -221,6 +221,12 @@ export default new Router({
       meta: {title: '滑动到指定模块'}
     },
     {
+      path:'/ArticleSteps',
+      name:'ArticleSteps',
+      component: resolve => require(['../components/page/ArticleSteps'], resolve),
+      meta: {title: '自定义步骤条'}
+    },
+    {
       path:'/other',
       name:'other',
       component: resolve => require(['../components/page/other'], resolve),

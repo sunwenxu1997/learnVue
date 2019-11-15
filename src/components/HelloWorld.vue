@@ -37,7 +37,8 @@
     <li><router-link :to="{name:'vuex'}">vuex的使用</router-link></li>
     <li><router-link :to="{name:'waterfallFlow'}">瀑布流加载</router-link></li>
     <li><router-link :to="{name:'blockLoading'}">网页模块加载</router-link></li>
-     <li><router-link :to="{name:'assignBlock'}">滑动到指定模块</router-link></li>
+    <li><router-link :to="{name:'assignBlock'}">滑动到指定模块</router-link></li>
+    <li><router-link :to="{name:'ArticleSteps'}">自定义步骤条</router-link></li>
     <li><router-link :to="{name:'other'}">其他</router-link></li>
     </ul>
   </div>
