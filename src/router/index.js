@@ -227,6 +227,12 @@ export default new Router({
       meta: {title: '自定义步骤条'}
     },
     {
+      path:'/FoldMenu',
+      name:'FoldMenu',
+      component: resolve => require(['../components/page/FoldMenu'], resolve),
+      meta: {title: '自定义折叠菜单栏'}
+    },
+    {
       path:'/other',
       name:'other',
       component: resolve => require(['../components/page/other'], resolve),
