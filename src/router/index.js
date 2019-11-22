@@ -233,6 +233,12 @@ export default new Router({
       meta: {title: '自定义折叠菜单栏'}
     },
     {
+      path:'/searchlight',
+      name:'searchlight',
+      component: resolve => require(['../components/page/searchlight'], resolve),
+      meta: {title: '文字探照灯效果'}
+    },
+    {
       path:'/other',
       name:'other',
       component: resolve => require(['../components/page/other'], resolve),
