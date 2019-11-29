@@ -239,6 +239,12 @@ export default new Router({
       meta: {title: '文字探照灯效果'}
     },
     {
+      path:'/HighlightBtn',
+      name:'HighlightBtn',
+      component: resolve => require(['../components/page/HighlightBtn'], resolve),
+      meta: {title: '按钮边框跟随高亮效果'}
+    },
+    {
       path:'/other',
       name:'other',
       component: resolve => require(['../components/page/other'], resolve),

@@ -41,6 +41,7 @@
     <li><router-link :to="{name:'ArticleSteps'}">自定义步骤条</router-link></li>
     <li><router-link :to="{name:'FoldMenu'}">自定义折叠菜单栏</router-link></li>
     <li><router-link :to="{name:'searchlight'}">文字探照灯效果</router-link></li>
+    <li><router-link :to="{name:'HighlightBtn'}">按钮边框跟随高亮效果</router-link></li>
     <li><router-link :to="{name:'other'}">其他</router-link></li>
     </ul>
   </div>
