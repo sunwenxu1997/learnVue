@@ -245,6 +245,12 @@ export default new Router({
       meta: {title: '按钮边框跟随高亮效果'}
     },
     {
+      path:'/WaterBck',
+      name:'WaterBck',
+      component: resolve => require(['../components/page/WaterBck'], resolve),
+      meta: {title: '水纹背景效果'}
+    },
+    {
       path:'/other',
       name:'other',
       component: resolve => require(['../components/page/other'], resolve),
