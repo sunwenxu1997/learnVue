@@ -251,6 +251,12 @@ export default new Router({
       meta: {title: '水纹背景效果'}
     },
     {
+      path:'/usePDF',
+      name:'usePDF',
+      component: resolve => require(['../components/page/usePDF'], resolve),
+      meta: {title: '使用PDF'}
+    },
+    {
       path:'/other',
       name:'other',
       component: resolve => require(['../components/page/other'], resolve),

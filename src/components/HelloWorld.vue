@@ -43,6 +43,7 @@
     <li><router-link :to="{name:'searchlight'}">文字探照灯效果</router-link></li>
     <li><router-link :to="{name:'HighlightBtn'}">按钮边框跟随高亮效果</router-link></li>
     <li><router-link :to="{name:'WaterBck'}">水纹背景效果</router-link></li>
+    <li><router-link :to="{name:'usePDF'}">使用PDF</router-link></li>
     <li><router-link :to="{name:'other'}">其他</router-link></li>
     </ul>
   </div>
