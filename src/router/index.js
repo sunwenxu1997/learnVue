@@ -9,7 +9,8 @@ export default new Router({
     {
       path: '/',
       name: 'HelloWorld',
-      component: HelloWorld
+      component: HelloWorld,
+      meta: {title: ''}
     },
     {
       path:'/drag',
@@ -255,6 +256,12 @@ export default new Router({
       name:'usePDF',
       component: resolve => require(['../components/page/usePDF'], resolve),
       meta: {title: '使用PDF'}
+    },
+    {
+      path:'/RegionSelect',
+      name:'RegionSelect',
+      component: resolve => require(['../components/page/RegionSelect'], resolve),
+      meta: {title: 'vue地区选择'}
     },
     {
       path:'/other',
