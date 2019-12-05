@@ -264,6 +264,12 @@ export default new Router({
       meta: {title: 'vue地区选择'}
     },
     {
+      path:'/customMouse',
+      name:'customMouse',
+      component: resolve => require(['../components/page/customMouse'], resolve),
+      meta: {title: '自定义鼠标样式效果'}
+    },
+    {
       path:'/other',
       name:'other',
       component: resolve => require(['../components/page/other'], resolve),
