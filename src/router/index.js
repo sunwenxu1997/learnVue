@@ -276,6 +276,12 @@ export default new Router({
       meta: {title: '圆形旋转菜单栏'}
     },
     {
+      path:'/VueWebsocket',
+      name:'VueWebsocket',
+      component: resolve => require(['../components/page/VueWebsocket'], resolve),
+      meta: {title: 'Vue+Websocket使用方法'}
+    },
+    {
       path:'/other',
       name:'other',
       component: resolve => require(['../components/page/other'], resolve),
