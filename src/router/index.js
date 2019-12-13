@@ -282,6 +282,12 @@ export default new Router({
       meta: {title: 'Vue+Websocket使用方法'}
     },
     {
+      path:'/3dNav',
+      name:'3dNav',
+      component: resolve => require(['../components/page/3dNav'], resolve),
+      meta: {title: '3D导航栏效果'}
+    },
+    {
       path:'/other',
       name:'other',
       component: resolve => require(['../components/page/other'], resolve),
