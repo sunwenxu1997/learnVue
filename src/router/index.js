@@ -288,6 +288,12 @@ export default new Router({
       meta: {title: '3D导航栏效果'}
     },
     {
+      path:'/CircleCut',
+      name:'CircleCut',
+      component: resolve => require(['../components/page/CircleCut'], resolve),
+      meta: {title: '剪切路径悬停效果'}
+    },
+    {
       path:'/other',
       name:'other',
       component: resolve => require(['../components/page/other'], resolve),
