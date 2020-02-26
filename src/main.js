@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import store from './store/index'
 import '@/assets/css/index.scss'
-import '@/assets/css/green.scss'
+// import '@/assets/css/green.scss'
 import vfilters from '@/assets/js/vfilters.js'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';

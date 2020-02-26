@@ -288,6 +288,12 @@ export default new Router({
       meta: {title: '3D导航栏效果'}
     },
     {
+      path:'/changeColor',
+      name:'changeColor',
+      component: resolve => require(['../components/page/changeColor'], resolve),
+      meta: {title: 'vue更换主题色'}
+    },
+    {
       path:'/other',
       name:'other',
       component: resolve => require(['../components/page/other'], resolve),

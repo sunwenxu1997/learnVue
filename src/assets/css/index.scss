@@ -1,7 +1,12 @@
 * {
   margin: 0;
 }
-body,html{
+:root {
+  --color: rgb(79, 67, 253);
+  --bck: rgb(196, 192, 255);
+}
+body,
+html {
   height: 100%;
 }
 .overall {
@@ -35,6 +40,6 @@ $color: yellow;
     opacity: 0.8;
   }
 }
-.swiper-button-next,.swiper-button-prev{
-    
+.swiper-button-next,
+.swiper-button-prev {
 }
