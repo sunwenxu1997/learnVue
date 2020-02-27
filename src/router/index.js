@@ -294,6 +294,12 @@ export default new Router({
       meta: {title: 'vue更换主题色'}
     },
     {
+      path:'/MoveCloud',
+      name:'MoveCloud',
+      component: resolve => require(['../components/page/MoveCloud'], resolve),
+      meta: {title: 'vue蓝天白云效果'}
+    },
+    {
       path:'/other',
       name:'other',
       component: resolve => require(['../components/page/other'], resolve),
