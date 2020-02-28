@@ -1,7 +1,14 @@
 <template>
   <div class="body" @mousemove="move">
     <div class="cover"></div>
+    <svg width="0" height="0" style="display: none">
+      <filter id="filter">
+        <feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="4" />
+        <feDisplacementMap in="SourceGraphic" scale="500" />
+      </filter>
+    </svg>
     <div class="cloud_box">
+      <div class="moon" v-if="moon"></div>
       <div
         class="cloud"
         v-for="(i,index) in cloudNum"
@@ -33,7 +40,8 @@ export default {
       w: window.innerWidth,
       h: window.innerHeight,
       phone: false,
-      cloudNum: 300
+      cloudNum: 200,
+      moon:false,
     };
   },
   created() {
@@ -77,10 +85,31 @@ export default {
         let box = document.querySelector(".cloud_box");
         TweenLite.to(box, 0.5, {
           ease: Back.easeOut.config(1.7),
-          y:Math.round(event.beta) * 3,
+          y: Math.round(event.beta) * 3,
           rotationZ: Math.round(event.gamma)
         });
       }
+    }
+    let nowTime = new Date();
+    let hour = nowTime.getHours();
+    let body = document.querySelector(".body");
+    if (hour < 6) {
+      body.style.background =
+        "linear-gradient(20deg,rgb(205, 248, 248) 0%,rgb(51, 139, 161) 50%,rgb(3, 84, 122) 100%)";
+      // document.write("早上好！");
+    } else if (hour < 15) {
+      body.style.background =
+        "linear-gradient(-150deg, rgb(205, 224, 248) 0%, rgb(51, 99, 161) 50%,rgb(3, 55, 122) 100%)";
+      // document.write("中午好！");
+    } else if (hour < 19) {
+      body.style.background =
+        "linear-gradient(-10deg,rgb(248, 205, 112) 0%,rgb(216, 89, 16) 50%,rgb(126, 30, 86) 100%)";
+      // document.write("下午好！");
+    } else {
+      this.moon = true
+      body.style.background =
+        "linear-gradient(0deg,rgb(16, 44, 95) 0%,rgb(9, 29, 66) 50%,rgb(0, 7, 19) 100%)";
+      // document.write("夜里好！");
     }
   },
   methods: {
@@ -118,17 +147,59 @@ export default {
   left: 0;
   z-index: 9;
 }
+//月亮
+.moon {
+  position: absolute;
+  right: 20%;
+  top: 10%;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-sizing: border-box;
+  box-shadow: 0 0 80px white;
+  overflow: hidden;
+  &::after {
+    content: "";
+    filter: url(#filter);
+    width: 100px;
+    height: 100px;
+    background: rgb(243, 243, 243);
+    position: absolute;
+    top: 10px;
+    left: 15px;
+  }
+}
 .body {
   position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: linear-gradient(
-    -150deg,
-    rgb(205, 224, 248) 0%,
-    rgb(51, 99, 161) 50%,
-    rgb(3, 55, 122) 100%
-  );
+  // background: linear-gradient(
+  //   20deg,
+  //   rgb(205, 248, 248) 0%,
+  //   rgb(51, 139, 161) 50%,
+  //   rgb(3, 84, 122) 100%
+  // );
+  // background: linear-gradient(
+  //   -150deg,
+  //   rgb(205, 224, 248) 0%,
+  //   rgb(51, 99, 161) 50%,
+  //   rgb(3, 55, 122) 100%
+  // );
+  // background: linear-gradient(
+  //   -10deg,
+  //   rgb(248, 205, 112) 0%,
+  //   rgb(216, 89, 16) 50%,
+  //   rgb(126, 30, 86) 100%
+  // );
+  // background: linear-gradient(
+  //   0deg,
+  //   rgb(16, 44, 95) 0%,
+  //   rgb(9, 29, 66) 50%,
+  //   rgb(0, 7, 19) 100%
+  // );
   .cloud_box {
     transform-style: preserve-3d;
     position: absolute;
@@ -151,7 +222,7 @@ export default {
       transform: translateZ(-2000px);
       img {
         width: 100%;
-        // filter:invert(1) blur(5px);
+        // filter:invert(0.1);
       }
     }
   }
