@@ -1,5 +1,5 @@
 <template>
-  <div class="body" @mousemove="move">
+  <div class="body">
     <div class="cover"></div>
     <svg width="0" height="0" style="display: none">
       <filter id="filter">
@@ -90,6 +90,7 @@ export default {
         });
       }
     }
+     document.addEventListener('mousemove',this.move)
     let nowTime = new Date();
     let hour = nowTime.getHours();
     let body = document.querySelector(".body");

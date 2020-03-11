@@ -300,6 +300,12 @@ export default new Router({
       meta: {title: 'vue蓝天白云效果'}
     },
     {
+      path:'/20200311',
+      name:'20200311',
+      component: resolve => require(['../components/page/20200311'], resolve),
+      meta: {title: '文字光影效果'}
+    },
+    {
       path:'/other',
       name:'other',
       component: resolve => require(['../components/page/other'], resolve),
