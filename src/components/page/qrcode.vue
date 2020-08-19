@@ -18,11 +18,11 @@ export default {
     };
   },
   created(){
-     this.message = window.location.href
+     this.message = 'https://jinzhengbao-h5.neafex.com'
   },
   methods:{
     spread(){
-        this.message = 'https://itunes.apple.com/cn/app/%E4%B8%9C%E9%87%91%E7%A7%80%E8%B4%A2/id1180475829?mt=8'
+        this.message = 'https://jinzhengbao-h5.neafex.com'
     }
   },
   watch: {

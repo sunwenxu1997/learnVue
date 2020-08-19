@@ -27,10 +27,11 @@ VueTouch.config.swipe = {
   threshold: 100 //手指左右滑动距离     
 }
 Vue.use(ElementUI, { size: 'small' });
+
+
 // 引入mockjs
 // require('./mock.js')
 Vue.config.productionTip = false
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
