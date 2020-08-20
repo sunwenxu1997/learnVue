@@ -311,5 +311,11 @@ export default new Router({
       component: resolve => require(['../components/page/other'], resolve),
       meta: {title: '其他'}
     },
+    {
+      path:'/uav',
+      name:'uav',
+      component: resolve => require(['../components/uav/index'], resolve),
+      meta: {title: '无人机'}
+    },
   ]
 })
