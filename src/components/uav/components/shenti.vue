@@ -35,7 +35,16 @@
       <div class="uav shen_ht">
         <svg>
           <path
-            id="svg_4" d="m0.15986,-0.09215l235.45647,0.09215l-40.75344,150.68487l-162.0769,-0.45662l-32.62613,-150.32039z"
+            id="svg_4"
+            d="m0.15986,-0.09215l235.45647,0.09215l-40.75344,150.68487l-162.0769,-0.45662l-32.62613,-150.32039z"
+          />
+        </svg>
+      </div>
+      <div class="uav shen_hb" v-for="(i,index) in 5" :key="index" >
+        <svg>
+          <path
+            id="svg_4"
+            d="m0.15986,-0.09215l235.45647,0.09215l-40.75344,150.68487l-162.0769,-0.45662l-32.62613,-150.32039z"
           />
         </svg>
       </div>
@@ -101,12 +110,20 @@ export default {};
   transform-origin: 100% 100%;
   transform: rotateY(-100deg) rotateX(-11.5deg) rotateZ(2deg) scaleX(0.5);
 }
-.shen_ht{
+.shen_ht,
+.shen_hb {
   position: absolute;
   bottom: -150px;
   left: 141px;
   width: 240px;
   height: 151px;
-  // transform: rotateX();
+}
+.shen_ht {
+  transform-origin: 50% 0;
+  transform: rotateX(-60deg);
+}
+.shen_hb {
+  transform-origin: 50% 0;
+  transform: translateZ(-173px) translateY(-9px) scaleX(.75) scaleY(.58) rotateX(17deg);
 }
 </style>
