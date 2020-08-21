@@ -49,11 +49,12 @@ export default {
 
 <style lang="scss" scoped>
 .flying {
-  //   animation: xuanzhuan 0.1s linear infinite;
+  animation: xuanzhuan .1s linear infinite;
+  filter: blur(30px);
 }
 #yepian {
+  transform: translateZ(45px);
   transform-style: preserve-3d;
-
   .uav {
     border: none !important;
     svg {
@@ -62,14 +63,16 @@ export default {
       path {
         opacity: 0.8;
         stroke-width: 1;
-        fill: black;
       }
     }
   }
 }
 @keyframes xuanzhuan {
+  0% {
+    transform: rotate(0deg) translateZ(45px);
+  }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(360deg) translateZ(45px);
   }
 }
 .ye_t,
@@ -80,7 +83,9 @@ export default {
 }
 .ye_t {
   height: 200px;
-  opacity: 0.8;
+  path {
+    fill: rgb(94, 94, 94);
+  }
 }
 .ye_b {
   height: 151px;
@@ -88,6 +93,9 @@ export default {
   top: -45px;
   transform-origin: 50% 0;
   transform: rotateX(-20deg) rotateY(-18deg) translateZ(8px) rotateZ(-3deg);
+  path {
+    fill: rgb(56, 56, 56);
+  }
 }
 .yepian {
   transform-style: preserve-3d;
