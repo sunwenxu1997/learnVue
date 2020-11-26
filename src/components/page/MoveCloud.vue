@@ -40,7 +40,7 @@ export default {
       w: window.innerWidth,
       h: window.innerHeight,
       phone: false,
-      cloudNum: 200,
+      cloudNum: 50,
       moon:false,
     };
   },
