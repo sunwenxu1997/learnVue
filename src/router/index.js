@@ -317,5 +317,17 @@ export default new Router({
       component: resolve => require(['../components/uav/index'], resolve),
       meta: {title: '无人机'}
     },
+    {
+      path:'/canvas',
+      name:'canvas',
+      component: resolve => require(['../components/page/canvas'], resolve),
+      meta: {title: 'cavans小车动画'}
+    },
+    {
+      path:'/i18n',
+      name:'i18n',
+      component: resolve => require(['../components/page/vue-i18n'], resolve),
+      meta: {title: 'vue-i18n国际化'}
+    },
   ]
 })

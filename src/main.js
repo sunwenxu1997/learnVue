@@ -22,21 +22,29 @@ const ThemeColor = vfilters.GetQueryString("ThemeColor")
 Vue.prototype.$axios = axios;
 Vue.prototype.$ThemeColor = ThemeColor;
 import VueTouch from 'vue-touch'
-Vue.use(VueTouch, { name: 'v-touch' })
+Vue.use(VueTouch, {
+  name: 'v-touch'
+})
 VueTouch.config.swipe = {
   threshold: 100 //手指左右滑动距离     
 }
-Vue.use(ElementUI, { size: 'small' });
-
-
+Vue.use(ElementUI, {
+  size: 'small'
+});
 // 引入mockjs
 // require('./mock.js')
 Vue.config.productionTip = false
 /* eslint-disable no-new */
+
+
+import i18n from './lang' // internationalization
 new Vue({
   el: '#app',
   store,
   router,
-  components: { App },
+  i18n,
+  components: {
+    App
+  },
   template: '<App/>'
 })
