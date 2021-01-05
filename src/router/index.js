@@ -329,5 +329,11 @@ export default new Router({
       component: resolve => require(['../components/page/vue-i18n'], resolve),
       meta: {title: 'vue-i18n国际化'}
     },
+    {
+      path:'/codeCopy',
+      name:'codeCopy',
+      component: resolve => require(['../components/page/codeCopy'], resolve),
+      meta: {title: '代码块复制功能'}
+    },
   ]
 })
