@@ -335,5 +335,17 @@ export default new Router({
       component: resolve => require(['../components/page/codeCopy'], resolve),
       meta: {title: '代码块复制功能'}
     },
+    {
+      path:'/luckyDraw',
+      name:'luckyDraw',
+      component: resolve => require(['../components/page/luckyDraw'], resolve),
+      meta: {title: '幸运抽奖-砸金蛋'}
+    },
+    {
+      path:'/luckyDraw1',
+      name:'luckyDraw1',
+      component: resolve => require(['../components/page/luckyDraw1'], resolve),
+      meta: {title: '幸运抽奖-刮刮卡'}
+    },
   ]
 })
