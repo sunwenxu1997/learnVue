@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="chouJiang one">
+  <div class="overall">
+    <div class="chouJiang">
       <div class="egg" @click="clickOne(index)" v-for="(i,index) in chouJiang.num" :key="index">
         <!-- 锤子图片 -->
         <img
@@ -57,11 +57,16 @@ export default {
   margin: 50px 0;
 }
 /* 砸金蛋 */
-.chouJiang.one {
+.chouJiang {
   display: flex;
   justify-content: center;
   transform: scale(0.7);
   .egg {
+    touch-action: none;
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    user-select: none;
     height: 150px;
     cursor: pointer;
     // overflow: hidden;
