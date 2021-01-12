@@ -353,5 +353,11 @@ export default new Router({
       component: resolve => require(['../components/page/luckyDraw2'], resolve),
       meta: {title: '幸运抽奖-摇一摇'}
     },
+    {
+      path:'/luckyDraw3',
+      name:'luckyDraw3',
+      component: resolve => require(['../components/page/luckyDraw3'], resolve),
+      meta: {title: '幸运抽奖-九宫格'}
+    },
   ]
 })
