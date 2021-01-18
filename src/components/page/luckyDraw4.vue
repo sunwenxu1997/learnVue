@@ -58,6 +58,7 @@ export default {
       winner: 2, //指定获奖下标 specified为true时生效
       specified: false, //是否指定获奖结果，false时为随机
       loading: false, //抽奖执行状态，防止用户多次点击
+      panziElement: null,
       list: [
         {
           title: '特等奖'
@@ -93,28 +94,34 @@ export default {
     root.style.setProperty('--nums', this.list.length)
   },
   methods: {
+    //开始抽奖
     start() {
       if (!this.loading) {
-        let panzi = document.querySelector('.panzi')
-        panzi.classList.remove(this.animationClass)
+        this.panziElement = document.querySelector('.panzi')
+        this.panziElement.classList.remove(this.animationClass)
         if (this.specified) {
           //此处可指定后端返回的指定奖品
           // this.winner = this.winner
+          this.winCallback()
         } else {
           this.winner = this.random(0, this.list.length - 1)
+          this.winCallback()
         }
-        setTimeout(() => {
-          /* 此处是为了解决当下次抽中的奖励与这次相同，动画不重新执行的 */
-          /* 添加一个定时器，是为了解决动画属性的替换效果，实现动画的重新执行 */
-          panzi.classList.add(this.animationClass)
-        }, 0)
-        // 因为动画时间为 3s ，所以这里3s后获取结果，其实结果早就定下了，只是何时显示，告诉用户
-        setTimeout(() => {
-          this.loading = false
-          console.log(`恭喜你获得了${this.winner}`)
-        }, 3000)
         this.loading = true
       }
+    },
+    //中奖返回方法
+    winCallback() {
+      setTimeout(() => {
+        /* 此处是为了解决当下次抽中的奖励与这次相同，动画不重新执行的 */
+        /* 添加一个定时器，是为了解决动画属性的替换效果，实现动画的重新执行 */
+        this.panziElement.classList.add(this.animationClass)
+      }, 0)
+      // 因为动画时间为 3s ，所以这里3s后获取结果，其实结果早就定下了，只是何时显示，告诉用户
+      setTimeout(() => {
+        this.loading = false
+        console.log(`恭喜你获得了${this.winner}`)
+      }, 3000)
     },
     //随机一个整数的方法
     random(min, max) {
