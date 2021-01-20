@@ -270,6 +270,13 @@ export default new Router({
       meta: { title: '自定义鼠标样式效果' }
     },
     {
+      path: '/customButton',
+      name: 'customButton',
+      component: resolve => require(['../components/page/customButton'], resolve),
+      meta: { title: '自定义粘性按钮效果' }
+    },
+    
+    {
       path: '/CircleNav',
       name: 'CircleNav',
       component: resolve => require(['../components/page/CircleNav'], resolve),
