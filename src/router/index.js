@@ -378,5 +378,11 @@ export default new Router({
       component: resolve => require(['../components/page/luckyDraw5'], resolve),
       meta: { title: '幸运抽奖-翻卡片' }
     },
+    {
+      path: '/gridBck',
+      name: 'gridBck',
+      component: resolve => require(['../components/page/gridBck'], resolve),
+      meta: { title: '网格背景' }
+    },
   ]
 })
