@@ -20,42 +20,19 @@ export default {
   data() {
     return {
       items: null
-    };
+    }
   },
   mounted() {
-    let _this = this;
-    _this.items = document.querySelectorAll(".block");
-    _this.handleScroll();
-    window.addEventListener("scroll", this.handleScroll);
+    this.items = document.querySelectorAll('.block')
+    this.handleScroll()
+    window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
-    // m~n之间的随机整数
-    random(m, n) {
-      return Math.floor(Math.random() * (n - m + 1) + m);
-    },
-    //定义特殊的样式(此处只是方便实现效果，具体可自己定义)
-    getClassName(num) {
-      if (num == 1) {
-        return "toScaleBig";
-      } else if (num == 2) {
-        return "toTop";
-      } else if (num == 3) {
-        return "toBottom";
-      } else if (num == 4) {
-        return "toLeft";
-      } else if (num == 5) {
-        return "toRight";
-      } else if (num == 6) {
-        return "toRoate";
-      } else if (num == 7) {
-        return "toScaleSmall";
-      }
-    },
     //判断 模块 是否达到可视范围
     isElementInViewport(el) {
       // getBoundingClientRect()用于获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置。
       // 注意：如果模块的整体宽或高 大于 浏览器可视窗口 的时候，此方法不可使用
-      var rect = el.getBoundingClientRect();
+      var rect = el.getBoundingClientRect()
       return (
         rect.top >= 0 &&
         rect.left >= 0 &&
@@ -63,28 +40,46 @@ export default {
           (window.innerHeight || document.documentElement.clientHeight) &&
         rect.right <=
           (window.innerWidth || document.documentElement.clientWidth)
-      );
+      )
     },
     //监听滚轮方法
     handleScroll(val) {
-      let _this = this;
-      let scrollTop =
-        window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop;
       //每次滚轮滚动都会遍历 模块数组，从而添加样式
-      for (let i = 0; i < _this.items.length; i++) {
-        //如果 模块 达到可视范围，那么添加样式
-        if (_this.isElementInViewport(_this.items[i])) {
-          _this.items[i].classList.add("in-view");
+      this.items.forEach(i => {
+        if (this.isElementInViewport(i)) {
+          //如果 模块 达到可视范围，那么添加样式
+          i.classList.add('in-view')
         } else {
           //每次滚动时都会出现过度效果
-          //   _this.items[i].classList.remove("in-view");
+          //定义过渡效果加载一次还是多次，注释为一次，解注释为多次
+          // i.classList.remove('in-view')
         }
+      })
+    },
+    // m~n之间的随机整数
+    random(m, n) {
+      return Math.floor(Math.random() * (n - m + 1) + m)
+    },
+    //定义特殊的样式(此处只是方便实现效果，具体可自己定义)
+    getClassName(num) {
+      if (num == 1) {
+        return 'toScaleBig'
+      } else if (num == 2) {
+        return 'toTop'
+      } else if (num == 3) {
+        return 'toBottom'
+      } else if (num == 4) {
+        return 'toLeft'
+      } else if (num == 5) {
+        return 'toRight'
+      } else if (num == 6) {
+        return 'toRoate'
+      } else if (num == 7) {
+        return 'toScaleSmall'
       }
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
