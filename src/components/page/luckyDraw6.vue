@@ -47,10 +47,10 @@ export default {
         {
           title: '7'
         }
-      ],
+      ], //奖品列表，目前最多支持7个，想支持更多，可以手动添加对应的css样式动画
       winner: null, //指定的奖品 null时为不中奖
       loading: false, //抽奖执行状态，防止用户多次点击
-      gundongElement: null,
+      gundongElement: null, //储存获取到的滚动容器的标签
       animationClass: [] //3个抽奖模块对应的动画属性,方便后来对应添加和移除该class样式
     }
   },
@@ -134,7 +134,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$time:3s; //老虎机的转动时间 3s 后停止，修改后需要在计时器 setTimeout 中修改对应获奖提示的时间
+$time: 3s; //老虎机的转动时间 3s 后停止，修改后需要在计时器 setTimeout 中修改对应获奖提示的时间
 .overall {
   perspective: 3000px;
 }
@@ -150,8 +150,8 @@ $time:3s; //老虎机的转动时间 3s 后停止，修改后需要在计时器 
   font-size: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px #ccc;
-  &:active{
-    transform: scale(.9);
+  &:active {
+    transform: scale(0.9);
   }
 }
 .cj-box {
