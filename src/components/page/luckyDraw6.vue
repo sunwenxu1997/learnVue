@@ -47,7 +47,7 @@ export default {
         {
           title: '7'
         }
-      ], //奖品列表，目前最多支持7个，想支持更多，可以手动添加对应的css样式动画
+      ], //奖品列表，目前最多支持8个，想支持更多，可以手动添加对应的css样式动画
       winner: null, //指定的奖品 null时为不中奖
       loading: false, //抽奖执行状态，防止用户多次点击
       gundongElement: null, //储存获取到的滚动容器的标签
