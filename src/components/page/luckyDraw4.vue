@@ -116,6 +116,9 @@ export default {
         /* 此处是为了解决当下次抽中的奖励与这次相同，动画不重新执行的 */
         /* 添加一个定时器，是为了解决动画属性的替换效果，实现动画的重新执行 */
         this.panziElement.classList.add(this.animationClass)
+        /* 此处是为了记录最终的获奖位置，这样下次旋转就可以从此处开始了 */
+        /* 因为动画是 5*360deg 的转度，所以此处设置后，依旧可以旋转 */
+        this.panziElement.style.transform = `rotate(${360/this.list.length*this.winner}deg)`
       }, 0)
       // 因为动画时间为 3s ，所以这里3s后获取结果，其实结果早就定下了，只是何时显示，告诉用户
       setTimeout(() => {

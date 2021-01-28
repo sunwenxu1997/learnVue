@@ -379,6 +379,12 @@ export default new Router({
       meta: { title: '幸运抽奖-翻卡片' }
     },
     {
+      path: '/luckyDraw6',
+      name: 'luckyDraw6',
+      component: resolve => require(['../components/page/luckyDraw6'], resolve),
+      meta: { title: '幸运抽奖-老虎机' }
+    },
+    {
       path: '/gridBck',
       name: 'gridBck',
       component: resolve => require(['../components/page/gridBck'], resolve),
