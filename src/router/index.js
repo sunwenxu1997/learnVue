@@ -390,5 +390,11 @@ export default new Router({
       component: resolve => require(['../components/page/gridBck'], resolve),
       meta: { title: '网格背景' }
     },
+    {
+      path: '/map',
+      name: 'map',
+      component: resolve => require(['../components/page/map'], resolve),
+      meta: { title: '地图绘制' }
+    },
   ]
 })
