@@ -10,9 +10,6 @@
       <div class="tool" title="创建节点" @click="createNodes('rect')">
         <div class="rect"></div>
       </div>
-      <!-- <div class="tool" title="单向链接" @click="createEdges('edge')">
-        <i class="el-icon-sort-up"></i>
-      </div>-->
       <div class="tool" @click="mapZoom('+')" title="放大视图">
         <i class="el-icon-zoom-in"></i>
       </div>
@@ -31,13 +28,11 @@
 </template>
 
 <script>
-import { Graph } from '@antv/x6'
+import { Graph, Shape } from '@antv/x6'
+import '../../assets/css/x6.css'
 export default {
   data() {
     return {
-      alertShow: false,
-      alertMsg: {},
-      graph_undoDisabled: false,
       graph_zoom: 0, //地图缩放比例
       graph: null,
       //   data: {
@@ -77,618 +72,7 @@ export default {
       //   }
       // ],
       //   }
-      data: [
-        {
-          position: {
-            x: -150,
-            y: -210
-          },
-          size: {
-            width: 60,
-            height: 60
-          },
-          attrs: {
-            body: {
-              fill: '#fff',
-              stroke: '#000'
-            },
-            label: {
-              text: 'Node',
-              fill: '#333',
-              fontSize: 13
-            }
-          },
-          shape: 'rect',
-          id: 'e8e6459b-d177-4c4e-91b9-6bfdc8c687d1',
-          tools: {
-            items: ['button-remove']
-          },
-          ports: {
-            groups: {
-              left: {
-                position: 'left',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              },
-              right: {
-                position: 'right',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              },
-              top: {
-                position: 'top',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              },
-              bottom: {
-                position: 'bottom',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              }
-            },
-            items: [
-              {
-                id: 'port1-1',
-                group: 'left'
-              },
-              {
-                id: 'port1-2',
-                group: 'left',
-                attrs: {
-                  circle: {
-                    stroke: '#e9352f'
-                  }
-                }
-              },
-              {
-                id: 'port2-1',
-                group: 'right',
-                attrs: {
-                  circle: {
-                    stroke: '#e9352f'
-                  }
-                }
-              },
-              {
-                id: 'port2-2',
-                group: 'right'
-              },
-              {
-                id: 'port3-1',
-                group: 'top',
-                attrs: {
-                  circle: {
-                    stroke: '#e9352f'
-                  }
-                }
-              },
-              {
-                id: 'port3-2',
-                group: 'top'
-              },
-              {
-                id: 'port4-1',
-                group: 'bottom'
-              },
-              {
-                id: 'port4-2',
-                group: 'bottom',
-                attrs: {
-                  circle: {
-                    stroke: '#e9352f'
-                  }
-                }
-              }
-            ]
-          },
-          zIndex: 1
-        },
-        {
-          position: {
-            x: 90,
-            y: -210
-          },
-          size: {
-            width: 60,
-            height: 60
-          },
-          attrs: {
-            body: {
-              fill: '#fff',
-              stroke: '#000'
-            },
-            label: {
-              text: 'Node',
-              fill: '#333',
-              fontSize: 13
-            }
-          },
-          shape: 'rect',
-          id: '0cd2efd7-3a4c-4ff2-b119-0a6303db9ec8',
-          tools: {
-            items: ['button-remove']
-          },
-          ports: {
-            groups: {
-              left: {
-                position: 'left',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              },
-              right: {
-                position: 'right',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              },
-              top: {
-                position: 'top',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              },
-              bottom: {
-                position: 'bottom',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              }
-            },
-            items: [
-              {
-                id: 'port1-1',
-                group: 'left'
-              },
-              {
-                id: 'port1-2',
-                group: 'left',
-                attrs: {
-                  circle: {
-                    stroke: '#e9352f'
-                  }
-                }
-              },
-              {
-                id: 'port2-1',
-                group: 'right',
-                attrs: {
-                  circle: {
-                    stroke: '#e9352f'
-                  }
-                }
-              },
-              {
-                id: 'port2-2',
-                group: 'right'
-              },
-              {
-                id: 'port3-1',
-                group: 'top',
-                attrs: {
-                  circle: {
-                    stroke: '#e9352f'
-                  }
-                }
-              },
-              {
-                id: 'port3-2',
-                group: 'top'
-              },
-              {
-                id: 'port4-1',
-                group: 'bottom'
-              },
-              {
-                id: 'port4-2',
-                group: 'bottom',
-                attrs: {
-                  circle: {
-                    stroke: '#e9352f'
-                  }
-                }
-              }
-            ]
-          },
-          zIndex: 2
-        },
-        {
-          position: {
-            x: -150,
-            y: -30
-          },
-          size: {
-            width: 60,
-            height: 60
-          },
-          attrs: {
-            body: {
-              fill: '#fff',
-              stroke: '#000'
-            },
-            label: {
-              text: 'Node',
-              fill: '#333',
-              fontSize: 13
-            }
-          },
-          shape: 'rect',
-          id: '6a6c3315-1a03-4e50-8114-03c648500338',
-          tools: {
-            items: ['button-remove']
-          },
-          ports: {
-            groups: {
-              left: {
-                position: 'left',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              },
-              right: {
-                position: 'right',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              },
-              top: {
-                position: 'top',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              },
-              bottom: {
-                position: 'bottom',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              }
-            },
-            items: [
-              {
-                id: 'port1-1',
-                group: 'left'
-              },
-              {
-                id: 'port1-2',
-                group: 'left',
-                attrs: {
-                  circle: {
-                    stroke: '#e9352f'
-                  }
-                }
-              },
-              {
-                id: 'port2-1',
-                group: 'right',
-                attrs: {
-                  circle: {
-                    stroke: '#e9352f'
-                  }
-                }
-              },
-              {
-                id: 'port2-2',
-                group: 'right'
-              },
-              {
-                id: 'port3-1',
-                group: 'top',
-                attrs: {
-                  circle: {
-                    stroke: '#e9352f'
-                  }
-                }
-              },
-              {
-                id: 'port3-2',
-                group: 'top'
-              },
-              {
-                id: 'port4-1',
-                group: 'bottom'
-              },
-              {
-                id: 'port4-2',
-                group: 'bottom',
-                attrs: {
-                  circle: {
-                    stroke: '#e9352f'
-                  }
-                }
-              }
-            ]
-          },
-          zIndex: 3
-        },
-        {
-          position: {
-            x: -150,
-            y: 140
-          },
-          size: {
-            width: 60,
-            height: 60
-          },
-          attrs: {
-            body: {
-              fill: '#fff',
-              stroke: '#000'
-            },
-            label: {
-              text: 'Node',
-              fill: '#333',
-              fontSize: 13
-            }
-          },
-          shape: 'rect',
-          id: '0deec165-b0c6-4482-88d3-b9d48a2a46d7',
-          tools: {
-            items: ['button-remove']
-          },
-          ports: {
-            groups: {
-              left: {
-                position: 'left',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              },
-              right: {
-                position: 'right',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              },
-              top: {
-                position: 'top',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              },
-              bottom: {
-                position: 'bottom',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              }
-            },
-            items: [
-              {
-                id: 'port1-1',
-                group: 'left'
-              },
-              {
-                id: 'port1-2',
-                group: 'left',
-                attrs: {
-                  circle: {
-                    stroke: '#e9352f'
-                  }
-                }
-              },
-              {
-                id: 'port2-1',
-                group: 'right',
-                attrs: {
-                  circle: {
-                    stroke: '#e9352f'
-                  }
-                }
-              },
-              {
-                id: 'port2-2',
-                group: 'right'
-              },
-              {
-                id: 'port3-1',
-                group: 'top',
-                attrs: {
-                  circle: {
-                    stroke: '#e9352f'
-                  }
-                }
-              },
-              {
-                id: 'port3-2',
-                group: 'top'
-              },
-              {
-                id: 'port4-1',
-                group: 'bottom'
-              },
-              {
-                id: 'port4-2',
-                group: 'bottom',
-                attrs: {
-                  circle: {
-                    stroke: '#e9352f'
-                  }
-                }
-              }
-            ]
-          },
-          zIndex: 4
-        },
-        {
-          shape: 'edge',
-          id: '6bef09ba-572c-4b0d-9a03-0bf447803cb5',
-          source: {
-            cell: 'e8e6459b-d177-4c4e-91b9-6bfdc8c687d1',
-            port: 'port2-2'
-          },
-          target: {
-            cell: '0cd2efd7-3a4c-4ff2-b119-0a6303db9ec8',
-            port: 'port1-2'
-          },
-          zIndex: 5
-        },
-        {
-          shape: 'edge',
-          id: '1a828042-7216-45a7-9a4b-5cf8c932f4aa',
-          source: {
-            cell: '0cd2efd7-3a4c-4ff2-b119-0a6303db9ec8',
-            port: 'port1-1'
-          },
-          target: {
-            cell: 'e8e6459b-d177-4c4e-91b9-6bfdc8c687d1',
-            port: 'port2-1'
-          },
-          zIndex: 6
-        },
-        {
-          shape: 'edge',
-          id: '2b34934d-1899-4ec5-88ee-2b45514b1f05',
-          source: {
-            cell: 'e8e6459b-d177-4c4e-91b9-6bfdc8c687d1',
-            port: 'port4-1'
-          },
-          target: {
-            cell: '6a6c3315-1a03-4e50-8114-03c648500338',
-            port: 'port3-1'
-          },
-          zIndex: 7
-        },
-        {
-          shape: 'edge',
-          id: '3538bbc0-6c21-4857-823d-c17b4d75f010',
-          source: {
-            cell: '6a6c3315-1a03-4e50-8114-03c648500338',
-            port: 'port3-2'
-          },
-          target: {
-            cell: 'e8e6459b-d177-4c4e-91b9-6bfdc8c687d1',
-            port: 'port4-2'
-          },
-          zIndex: 8
-        },
-        {
-          shape: 'edge',
-          id: '816b94a6-01a0-4aaa-bde4-5425ce89a999',
-          source: {
-            cell: '6a6c3315-1a03-4e50-8114-03c648500338',
-            port: 'port4-1'
-          },
-          target: {
-            cell: '0deec165-b0c6-4482-88d3-b9d48a2a46d7',
-            port: 'port3-1'
-          },
-          zIndex: 9
-        },
-        {
-          shape: 'edge',
-          id: 'eb6ab6c3-446e-4a2b-9f56-b4b1d215b2a9',
-          source: {
-            cell: '0deec165-b0c6-4482-88d3-b9d48a2a46d7',
-            port: 'port3-2'
-          },
-          target: {
-            cell: '6a6c3315-1a03-4e50-8114-03c648500338',
-            port: 'port4-2'
-          },
-          zIndex: 10
-        }
-      ]
+      data: []
     }
   },
   mounted() {
@@ -725,6 +109,21 @@ export default {
           // 自动吸附
           snap: {
             radius: 20
+          },
+          createEdge() {
+            //创建动画虚线边
+            return new Shape.Edge({
+              attrs: {
+                line: {
+                  stroke: '#1890ff',
+                  strokeDasharray: 5,
+                  targetMarker: 'classic',
+                  style: {
+                    animation: 'ant-line 30s infinite linear'
+                  }
+                }
+              }
+            })
           }
         }
       })
@@ -857,44 +256,8 @@ export default {
           ports: {
             groups: {
               // 输入链接桩群组定义
-              left: {
-                position: 'left',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              },
-              right: {
-                position: 'right',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              },
-              top: {
-                position: 'top',
-                attrs: {
-                  circle: {
-                    r: 4,
-                    magnet: true,
-                    stroke: '#31d0c6',
-                    strokeWidth: 2,
-                    fill: '#fff'
-                  }
-                }
-              },
-              bottom: {
-                position: 'bottom',
+              group1: {
+                position: 'absolute',
                 attrs: {
                   circle: {
                     r: 4,
@@ -909,11 +272,21 @@ export default {
             items: [
               {
                 id: 'port1-1',
-                group: 'left'
+                group: 'group1',
+                // 通过 args 指定绝对位置
+                args: {
+                  x: 0,
+                  y: 23
+                }
               },
               {
                 id: 'port1-2',
-                group: 'left',
+                group: 'group1',
+                // 通过 args 指定绝对位置
+                args: {
+                  x: 0,
+                  y: 38
+                },
                 attrs: {
                   circle: {
                     stroke: '#e9352f'
@@ -922,7 +295,11 @@ export default {
               },
               {
                 id: 'port2-1',
-                group: 'right',
+                group: 'group1',
+                args: {
+                  x: 23,
+                  y: 0
+                },
                 attrs: {
                   circle: {
                     stroke: '#e9352f'
@@ -931,11 +308,19 @@ export default {
               },
               {
                 id: 'port2-2',
-                group: 'right'
+                group: 'group1',
+                 args: {
+                  x: 38,
+                  y: 0
+                },
               },
               {
                 id: 'port3-1',
-                group: 'top',
+                group: 'group1',
+                 args: {
+                  x: 60,
+                  y: 23
+                },
                 attrs: {
                   circle: {
                     stroke: '#e9352f'
@@ -944,15 +329,27 @@ export default {
               },
               {
                 id: 'port3-2',
-                group: 'top'
+                group: 'group1',
+                 args: {
+                  x: 60,
+                  y: 38
+                },
               },
               {
                 id: 'port4-1',
-                group: 'bottom'
+                group: 'group1',
+                 args: {
+                  x: 23,
+                  y: 60
+                },
               },
               {
                 id: 'port4-2',
-                group: 'bottom',
+                group: 'group1',
+                 args: {
+                  x: 38,
+                  y: 60
+                },
                 attrs: {
                   circle: {
                     stroke: '#e9352f'
@@ -984,11 +381,11 @@ export default {
       })
 
       edges.forEach(edge => {
-        edge.attr('line/stroke', 'black')
+        edge.attr('line/stroke', '#1890ff')
         edge.prop('labels/0', {
           attrs: {
             body: {
-              stroke: 'black'
+              stroke: '#1890ff'
             }
           }
         })
