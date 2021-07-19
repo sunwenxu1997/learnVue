@@ -402,5 +402,11 @@ export default new Router({
             component: resolve => require(['../components/page/Matter'], resolve),
             meta: { title: 'matter.js物理引擎使用-2D' }
         },
+        {
+            path: '/toPDF',
+            name: 'toPDF',
+            component: resolve => require(['../components/page/toPDF'], resolve),
+            meta: { title: '页面转PDF' }
+        },
     ]
 })
